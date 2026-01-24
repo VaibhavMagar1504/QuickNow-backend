@@ -12,7 +12,6 @@ import com.example.QuickNow.Service.AdminService;
 
 @RestController
 @RequestMapping("/admin")
-@CrossOrigin(origins = "http://localhost:5173") // allow your React dev server
 public class AdminController {
 
     @Autowired

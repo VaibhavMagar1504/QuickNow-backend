@@ -28,7 +28,7 @@ import com.example.QuickNow.Model.Product;
 import com.example.QuickNow.Service.ProductService;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/")
 public class ProductController {
 	
 	@Autowired
