@@ -28,8 +28,7 @@ import com.example.QuickNow.Model.Product;
 import com.example.QuickNow.Service.ProductService;
 
 @RestController
-
-@CrossOrigin(origins = "http://localhost:5173")
+@RequestMapping("/user")
 public class ProductController {
 	
 	@Autowired

@@ -23,7 +23,6 @@ import com.example.QuickNow.Service.UserService;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins = "http://localhost:5173")
 public class UserController {
 	
 	@Autowired
