@@ -6,6 +6,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+import java.util.List;
+
 @Configuration
 public class CorsConfig {
 
@@ -13,14 +15,32 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
 
         CorsConfiguration config = new CorsConfiguration();
+
         config.setAllowCredentials(true);
 
-        config.addAllowedOrigin("https://quick-now-frontend-va6s.vercel.app");
-        config.addAllowedOrigin("https://quick-now-frontend-9y6t.vercel.app");
-        config.addAllowedOrigin("http://localhost:5173");
+        config.setAllowedOrigins(List.of(
+                "https://quick-now-frontend-9y6t.vercel.app",
+                "https://quick-now-frontend-va6s.vercel.app",
+                "http://localhost:5173"
+        ));
 
-        config.addAllowedHeader("*");
-        config.addAllowedMethod("*");
+        config.setAllowedHeaders(List.of(
+                "Authorization",
+                "Content-Type",
+                "Accept",
+                "Origin",
+                "X-Requested-With"
+        ));
+
+        config.setAllowedMethods(List.of(
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE",
+                "OPTIONS"
+        ));
+
+        config.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
